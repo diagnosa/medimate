@@ -2,20 +2,23 @@ const { Op } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   const Medicine = sequelize.define(
-    "medicine_list",
+    "MedicineList",
     {
-      list_id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true },
-      medicine_name: DataTypes.STRING,
-      intake_interval: DataTypes.INTEGER,
-      dosage: DataTypes.STRING,
-      start_date: DataTypes.DATE,
-      end_date: DataTypes.DATE
+      medicineName: { type:DataTypes.STRING, field: 'medicine_name' },
+      intakeInterval: { type:DataTypes.INTEGER, field: 'intake_interval' },
+      dosage: { type:DataTypes.STRING, field: 'dosage' },
+      startDate: { type:DataTypes.DATE, field: 'start_date' },
+      endDate: { type:DataTypes.DATE, field: 'end_date' }
     },
     {
+        tableName: 'medicine_list',
+        underscored: true,
         timestamps: false,
         freezeTableName: true
     }
   );
+
+  Medicine.removeAttribute('id');
 
   Medicine.associate = function(models) {
     // associations can be defined here
