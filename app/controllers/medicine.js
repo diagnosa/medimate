@@ -4,8 +4,8 @@ const models = require("../models");
 
 const router = express.Router();
 
-router.get("/", async function(req, res) {
-  const med = await models.Medicine.find_today();
+router.get("/today", async function(req, res) {
+  const med = await models.medicine_list.find_today();
   return res.json(med);
 });
 
