@@ -3,6 +3,7 @@ const config = require("../config");
 
 module.exports.registerRoutes = app => {
   app.use("/", controllers.home);
+  app.use("/insert-prescription", controllers.prescription);
   app.use("/auth", controllers.auth);
   app.use("/tutorial", controllers.tutorial);
   app.use("/medicine", controllers.medicine);

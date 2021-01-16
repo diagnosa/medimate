@@ -1,4 +1,5 @@
 /* Custom stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap');
 
 .nav-link:hover {
   color: inherit;
@@ -14,4 +15,21 @@
 .octicon {
   display: inline-block;
   vertical-align: text-top;
+}
+
+.h1, .h2, .navbar {
+  font-family: 'Pragati Narrow', sans-serif;
+}
+
+.h1 {
+  font-weight: 700;
+}
+
+.navbar a {
+  font-size: 24px;
+}
+
+.content {
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  min-height: 50vh;
 }
