@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   const Medicine = sequelize.define(
     "MedicineList",
     {
+      listID: {type:DataTypes.INTEGER, field: 'list_id'},
       medicineName: { type:DataTypes.STRING, field: 'medicine_name' },
       intakeInterval: { type:DataTypes.INTEGER, field: 'intake_interval' },
       dosage: { type:DataTypes.STRING, field: 'dosage' },
