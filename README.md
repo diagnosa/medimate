@@ -63,7 +63,7 @@ Response:
 }
 
 /medicine/delete
-
+> To delete medicine
 Request:
 /medicine/delete
 {
@@ -74,7 +74,7 @@ Response:
 Success in delete record
 
 /medicine/update
-
+> To update medicine
 Request:
 /medicine/update
 {
