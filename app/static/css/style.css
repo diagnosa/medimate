@@ -12,6 +12,10 @@
   text-decoration: none;
 }
 
+#top-img {
+  width: 250px;
+}
+
 .octicon {
   display: inline-block;
   vertical-align: text-top;
@@ -32,4 +36,81 @@
 .content {
   background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
   min-height: 50vh;
+}
+
+#intake-display .row{
+  align-items: center;
+  justify-content: center;
+  max-width: 95vw;
+  margin: auto;
+}
+
+.medicine {
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  height: 200px;
+  color: #fff;
+  margin: 10px;
+  background: #11998e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+.medicine h4 {
+  transition: 0.2s;
+  transform: translateY(20px);
+}
+.medicine p {
+  transition: 0.2s;
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+}
+.medicine:before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  bottom: 5%;
+  left: 5%;
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  transition: 0.2s;
+  transform: scaleX(0);
+}
+
+
+.medicine:after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  bottom: 5%;
+  left: 5%;
+  border-left: solid 2px;
+  border-right: solid 2px;
+  transition: 0.2s;
+  transform: scaleY(0);
+}
+
+.medicine:hover:before, 
+.medicine:hover:after{
+  transform: scale(1);
+}
+
+.medicine:hover h4, 
+.medicine:hover p {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 767.98px) {
+  #top-img {
+    width: 50px;
+  }
 }
