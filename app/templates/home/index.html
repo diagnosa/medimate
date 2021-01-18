@@ -14,3 +14,32 @@
     <h3>Today Intake</h3>
   </div>
 </div>
+
+<script>
+  $(function() {
+    $.getJSON( "medicine/today", function( data ) {
+      let items = [];
+      $.each( data, function( key, {
+        dosage,
+        medicineName,
+        intakeInterval
+      } ) {
+        items.push(`
+        <figure class="medicine col-lg-3 col-md-5 col-sm-6">
+          <figcaption>
+            <h4>${medicineName}</h4>
+            <p>
+              Intake: ${intakeInterval} per day</br>
+              Dosage: ${dosage}
+            </p>
+          </figcaption>
+        </figure>
+        `);
+      });
+      $( "<div/>", {
+        "class": "row mw-20",
+        html: items.join( "" )
+      }).appendTo( "#intake-display" );
+    });
+  });
+</script>
